@@ -5,7 +5,7 @@ function Todo (todo) {
   return (
     <div>
       <input type="checkbox"/>
-      {todo.text}
+      <input value={todo.text}/>
     </div>
   )
 }
@@ -24,12 +24,9 @@ function TodoList (props) {
 }
 
 function App (props) {
-  // TODO (haha): actually pass in the state
   let state = props.state
   return (
-    <div className="App">
-      <TodoList state={state}/>
-    </div>
+    <TodoList state={state}/>
   )
 }
 
