@@ -1,3 +1,44 @@
 .App {
+}
+
+h3 {
   text-align: center;
+}
+
+.TodoList {
+  font: 24px monospace;
+  margin: 64px;
+}
+
+.TodoList > div {
+  padding: 16px;
+  border: 1px solid #999;
+  border-radius: 16px;
+  background: #eee;
+}
+
+.TodoList header {
+  display: flex;
+  margin: 32px 0;
+}
+
+.TodoList header h3 {
+  flex: 1;
+}
+
+.TodoList .controls {
+  flex: none;
+  display: flex;
+  align-items: center;
+}
+
+.TodoList button {
+  font-size: 24px;
+}
+
+.TodoList input[type=checkbox] {
+  height: 24px;
+  width: 24px;
+  margin-right: 32px;
+  vertical-align: middle;
 }
