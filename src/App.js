@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import './App.css'
 
+/*global evt*/
+
 function Todo (todo) {
+  let id = todo.ts
   return (
     <div>
-      <input type="checkbox"/>
-      <input value={todo.text}/>
+      <input type="checkbox" checked={todo.done} onChange={()=>evt('set_todo_done',id,!todo.done)}/>
+      <input onChange={e=>evt('set_todo_text',id,e.target.value)} value={todo.text}/>
     </div>
   )
 }
@@ -16,9 +19,9 @@ function TodoList (props) {
     <div className="TodoList">
       <header>
         <h3>To Do</h3>
-        <div className="controls"><button>New</button></div>
+        <div className="controls"><button onClick={()=>evt('add_todo',Date.now())}>New</button></div>
       </header>
-      {state.todos.map(Todo)}
+      {Object.values(state.todos).map(Todo)}
     </div>
   )
 }
