@@ -13,6 +13,9 @@ State flows down through React components (only).
 
 The state object is treated as immutable (even though it is actually not).
 
+There is a single state object that represents the entire current state of the UI, is JSON-serializable, is never mutated except in one place, and is passed down (in whole or in part) through all React components.
+There is no state visible in the UI except what is stored in this single state object.
+
 Anything that needs to do so generates an "event" by calling a function `evt`.
 
 The `evt` function turns these events into updates of the state object, and calls `render` again at the top level to update the React view.
@@ -31,6 +34,3 @@ All you really need to know is `npm start`.
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
